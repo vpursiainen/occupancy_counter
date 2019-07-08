@@ -7,6 +7,8 @@ def collect_occupancy(command, occupancy_change):
         new_occupancy = old_occupancy + int(occupancy_change)
     elif command in ["r", "remove", "Remove", "-"]:
         new_occupancy = old_occupancy - int(occupancy_change)
+    elif command in ["set", "Set", "s"]:
+        new_occupancy = int(occupancy_change)
     store_occupancy(new_occupancy)
 
 if __name__ == '__main__':
