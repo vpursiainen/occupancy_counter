@@ -12,5 +12,9 @@ def store_occupancy(number_of_occupants):
 def get_occupancy():
     cl = connect_to_mongodb()
     occ = OccupancyData.objects.order_by('-collectedAt').first()
+    if not occ:
+        occupancy = 0
+    else:
+        occupancy = occ.occupancy
     disconnect_from_mongodb(cl)
-    return occ.occupancy
+    return occupancy
