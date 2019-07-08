@@ -12,6 +12,7 @@ def collect_occupancy(command, occupancy_change):
         new_occupancy = int(occupancy_change)
     store_occupancy(new_occupancy)
     print("Current occupancy is " + str(new_occupancy))
+    print()
 
 #if __name__ == '__main__':
     #collect_occupancy(*sys.argv[1:])
@@ -27,6 +28,5 @@ while 1:
         #print("Operation: ", x) 
         #print("Number of people: ", y)
         print("Time: ",strftime("%Y-%m-%d %H:%M:%S", localtime()))
-        print("\n")
         collect_occupancy(x,y)
 
