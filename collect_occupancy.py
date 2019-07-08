@@ -11,6 +11,7 @@ def collect_occupancy(command, occupancy_change):
     elif command in ["set", "Set", "s"]:
         new_occupancy = int(occupancy_change)
     store_occupancy(new_occupancy)
+    print("Current occupancy is " + str(new_occupancy))
 
 #if __name__ == '__main__':
     #collect_occupancy(*sys.argv[1:])
