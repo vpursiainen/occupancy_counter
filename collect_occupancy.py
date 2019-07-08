@@ -1,4 +1,5 @@
 import sys
+from time import localtime, strftime
 from mongodb_occupancy_data_controller import store_occupancy, get_occupancy
 
 def collect_occupancy(command, occupancy_change):
@@ -11,9 +12,20 @@ def collect_occupancy(command, occupancy_change):
         new_occupancy = int(occupancy_change)
     store_occupancy(new_occupancy)
 
-if __name__ == '__main__':
-    collect_occupancy(*sys.argv[1:])
+#if __name__ == '__main__':
+    #collect_occupancy(*sys.argv[1:])
 
 
-
+while 1:
+    try:
+        x, y = input("Enter your operation: ").split()  
+    except ValueError:
+        print("Input Error!")
+        continue
+    else:
+        #print("Operation: ", x) 
+        #print("Number of people: ", y)
+        print("Time: ",strftime("%Y-%m-%d %H:%M:%S", localtime()))
+        print("\n")
+        collect_occupancy(x,y)
 
